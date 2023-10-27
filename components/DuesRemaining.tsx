@@ -11,7 +11,8 @@ interface DuesRemainingProps {
     value:number,
     target:number,
     type:string,
-    onPaymentPlan: boolean
+    onPaymentPlan: boolean,
+    link:string
 
 }
 
@@ -22,6 +23,7 @@ const App: FC<DuesRemainingProps> = ({
     target,
     type,
     onPaymentPlan,
+    link
                             }) => {
 
 
@@ -65,7 +67,9 @@ const App: FC<DuesRemainingProps> = ({
                 </CardBody>
                 <Divider/>
                 <CardFooter className={"grid grid-flow-col gap-5"}>
-                    <Button>Payment Plan</Button>
+                    <Link href={"/mydues/debtSlug?id=123"}>
+                        <Button className={"w-full"}>Payment Plan</Button>
+                    </Link>
                     <Button>One Time Payment</Button>
                 </CardFooter>
             </NCard>
